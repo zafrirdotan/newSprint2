@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+     <link rel="stylesheet" href="stylesheets/main.css"/>
+    <title>Document</title>
+    
+
+    <title>Game 1</title>
+
+</head>
+
+<body>
+   
+    <main class ="game1Container">
+        <div class ="game1Img" >
+
+        </div>
+        <div class="game1Ans">
+                <button  type="button" class="ans1" id="ans1" onclick="button1Clicked(this.value, this.id)">Dora loren ipsum</button>
+                <button type="button" class="ans2" id="ans2" onclick="button2Clicked(this.value, this.id)">Dora loren ipsum</button>
+        </div>
+    </main>
+
+    <button id="chal2" type="button" class="finishChal" onclick="finishChal(this.id)">finish</button>
+    <button id="chal2" type="button" disabled class="chals chal2" onclick="goToNextLevel(this.id)">chal2 <div class="locked" ></div> </button>
+
+</body>
+<script src="lib/jquery/jquery.js"></script>
+<script src="lib/jquery/jquery-ui.min.js"></script>
+<script src="lib/jquery/jquery.ui.touch-punch.min.js"></script>
+
+<script src="js/chal1.js"></script>
+<script src="js/chal.js"></script>
+
+</html>

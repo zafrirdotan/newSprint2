@@ -1,0 +1,74 @@
+.game3Container {
+    border: 0.1rem solid yellow;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+   
+    .cell {
+        color: red;
+    }
+}
+
+.game3Img{
+    
+    width: 90rem;
+    height: 70rem;
+    margin-top: 0rem;
+    margin-bottom: -24rem;
+    img{
+    z-index: 0;
+        
+        width: 100%;
+        height: 100%;
+        border: 0.5rem solid black;
+    }     
+}
+
+.game3grid{   
+    width: 90rem;
+    height: 70rem;
+    margin-top: 0rem;
+    margin-bottom: -24rem;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    z-index: 1;
+    top: 15rem;
+    left: 4rem;
+    border: 0.5rem solid black;
+    .grid{
+        z-index: 1;
+        width: 33%;
+        height: 33%;
+        border: 0.1rem solid black;
+        font-size: 8rem;
+        padding: 5rem;
+        text-align: center;
+
+    }
+}
+
+
+.game3Ans{
+    
+    width: 90rem;
+    height: 69rem;
+    border: 0.5rem solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.ans{
+    width: 29.6rem;
+    height: 23rem;
+    border: 0.1rem solid blue;
+    font-size: 8rem;
+    padding: 5rem;
+    text-align: center;
+}

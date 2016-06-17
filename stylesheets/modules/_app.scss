@@ -1,0 +1,51 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    border: 0.1rem solid black;
+}
+header {
+  display:flex;
+  flex-flow: row wrap;
+  background-color: indigo;
+  padding:10px;
+  h1 {
+    color:gold;
+  }
+}
+
+footer {
+  background-color: black;
+  text-align: center;
+  color: #777;
+}
+
+@import 'chal1';
+@import 'chal2';
+@import 'chal3';
+@import 'chal4';
+
+// her we well need to set some media-querys for responcivity
+@media(max-width:767px){
+  font-size: 11px;
+  header {
+    text-align: center;
+    img {
+      margin:auto;
+    }  
+  }
+}
+// @media(min-width:768px){
+//   font-size: 16px;
+// }
+// @media(min-width:992px){
+//   font-size: 16px;
+// }
+@media(min-width:922px){
+  font-size: 16px;
+  body{
+      height: 300rem;
+      width: 700rem;
+      border: 0.1rem solid black;
+  } 
+}
+

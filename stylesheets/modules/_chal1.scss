@@ -1,0 +1,62 @@
+.game1Container {
+    border: 0.1rem solid yellow;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+   
+    .cell {
+        color: red;
+    }
+}
+
+.game1Img{
+    
+    width: 90rem;
+    height: 70rem;
+    border: 0.1rem solid yellow;
+    margin-top: 0rem;
+    margin-bottom: -24rem;
+    img{
+        width: 100%;
+        height: 100%;
+    }
+     
+}
+.game1Ans{
+    
+    width: 85rem;
+    height: 50rem;
+    border: 0.1rem solid yellow;
+    magin-up: -10rem;
+    
+    .ans1{
+        width: 85rem;
+        height: 50%;
+        border: 0.1rem solid black;
+        font-size: 6rem;
+    }    
+    .ans1.wrongAns{ 
+        border: 0.5rem solid red;
+    }
+    .ans1.rightAns{ 
+        border: 0.5rem solid blue;
+    }
+     .ans2{
+        width: 85rem;
+        height: 50%;
+        border: 0.1rem solid black;
+        font-size: 6rem;
+     }
+    .ans2.wrongAns{ 
+    border: 0.5rem solid red;
+    }
+    .ans2.rightAns{ 
+    border: 0.5rem solid blue;
+    }
+         
+}
+        
