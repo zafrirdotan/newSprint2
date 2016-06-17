@@ -18,7 +18,7 @@ $(document).ready(function(){
 function creatQues() {
    
     var gArrOfAns = [];
-    
+    var gQuess =[]
     var strQues;
     var a;
     var b;
@@ -34,31 +34,40 @@ function creatQues() {
         b = Math.ceil(Math.random()*10);
         ans = a + b;
         strQues = a + '+' + b;
-        strHTMLQues += '<div class="grid" id='+ (i+1) +' data-ans="'+ ans +'" >' + a + '+' + b  + '</div>';
+        var quesAndAns = { strQues, ans };
+        strHTMLQues += '<div class="grid" id='+ i +' data-ans="'+ ans +'" >' + strQues  + '</div>';
+        gQuess.push(quesAndAns);
         gArrOfAns.push(ans);    
     }
     containerQues.innerHTML = strHTMLQues;
     
+   
+    gQuess.forEach(function(quesAndAns, i){
+        $('#'+ i).droppable({
+        scope: quesAndAns.ans     
+            });
+    });
+
+   
     gArrOfAns.sort(function(a,b){
         return a-b;
     })
 
     gArrOfAns.forEach(function(ans, j) {
-        strHTMLAns += '<div class="ans" id='+ (j+1) +'>' + ans + '</div>';   
+        strHTMLAns += '<div class="ans" id="'+ ans + 'id' + j + '">' + ans + '</div>';   
         });           
     containerAns.innerHTML = strHTMLAns;
 
-    $('.ans').draggable();
-   
-    $('.grid').droppable({
-        drop: function (e, ui) {
-            $(ui.draggable).css('position', 'static').appendTo(this);
-            $('#li1').replaceWith('<li>'+dragNum1 +'<li>');
-            $(".winNums li").eq(dragNum1).remove();
-            isWin();
-
-        }
-    });
+    gArrOfAns.forEach(function(ans, j) {
+        
+        
+        $('#'+ans+'id'+ j).draggable({
+            revert: "invalid",
+            revertDuration: 200,
+            scope: ans 
+         
+        });
+    })
     
-
 }
+
