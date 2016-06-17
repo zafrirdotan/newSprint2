@@ -6298,31 +6298,31 @@ footer {
   height: 18%;
   width: 18%; }
 
-.downCont2 {
+.PlacedNums {
   display: flex;
   width: 95%;
   height: 50%;
   border: 1px solid green; }
 
 @media (min-width: 767px) {
-  .downCont2 {
+  .PlacedNums {
     width: 80%;
     flex-wrap: nowrap; } }
 
 @media (max-width: 550px) {
-  .downCont2 {
+  .PlacedNums {
     height: 80%; } }
 
-.downCont2 > ul {
+.PlacedNums > ul {
   width: 100%;
   display: flex;
   justify-content: space-around; }
 
 @media (max-width: 550px) {
-  .downCont2 > ul {
+  .PlacedNums > ul {
     flex-direction: column; } }
 
-.downCont2 > ul > li {
+.PlacedNums > ul > li {
   display: flex;
   justify-content: space-around;
   margin: 5px;
@@ -6342,21 +6342,21 @@ footer {
   font-size: 2em; }
 
 @media (max-width: 550px) {
-  .downCont2 > ul > li {
+  .PlacedNums > ul > li {
     width: 15%; } }
 
-.upCont2 {
+.numsToPlace {
   display: flex;
   width: 80%;
   height: 20%;
   border: 1px solid red; }
 
-.upCont2 > ul {
+.numsToPlace > ul {
   width: 100%;
   display: flex;
   justify-content: space-around; }
 
-.upCont2 > ul > li {
+.numsToPlace > ul > li {
   display: flex;
   justify-content: space-around;
   margin: 2px;
