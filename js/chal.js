@@ -55,10 +55,16 @@ function reportSolved(chalId){
  
 
  function goToNextLevel(id){
-    //  console.log('i am hire');
+     console.log('id in gotonext level');
      finishChal(id);
      upDateLS()
-     window.location.href = id+'.html';
+     if (id === 'chal4'){
+         var homePageStr = getHomePage();
+        window.location.href = homePageStr;
+     } else{
+        window.location.href = id+'.html';
+         
+     }
  }
 
  function upDateLS(){
@@ -72,7 +78,7 @@ function reportSolved(chalId){
  }
 
  function finishChal(id){
-     console.log('id: ', id);
+     console.log('id : ', id);
     //  console.log('.id', '.' + id);
     //  console.log(getChalById('chal1'));
      var chal = getChalById(id);
@@ -82,3 +88,6 @@ function reportSolved(chalId){
      document.querySelector( '.' + id ).disabled = false; 
  }
 
+function getHomePage(){
+    return 'http://127.0.0.1:8080';
+}
