@@ -7,19 +7,10 @@ var gLevels = [
 var gCurrLevel = 1;
 
 $(document).ready(function(){
-    renderImg()
+    // renderImg()
     creatQues()
    
 })
-
-function renderImg() {
-     var imgSrc = 'img/game3Imgs/elephant.jpg'; 
-     var strHTMLImg = '<img src="'+ imgSrc +'" alt="">';
-
-    $('.game3Img').html(strHTMLImg);
-}
-
-
 
 
 
@@ -33,7 +24,7 @@ function creatQues() {
     var b;
     var ans;
     var strHTMLQues ='';
-    var containerQues = document.querySelector('.game3grid');
+    var containerQues = document.querySelector('.game3Img');
     
     var strHTMLAns = '';
     var containerAns = document.querySelector('.game3Ans');
