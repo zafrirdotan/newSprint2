@@ -13,6 +13,11 @@ var gChals = [
         id: 'chal3',
         name: 'The Beach',
         isSolved: false
+    },
+    {
+        id: 'chal4',
+        name: 'The Mountain',
+        isSolved: false
     }
 ];
 
