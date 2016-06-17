@@ -19,8 +19,10 @@
   
   .PlacedNums{
       @media(min-width:767px){
+          display: flex;
+        
           width: 80%;
-          flex-wrap: nowrap;
+          flex-wrap: wrap;
       }
       @media(max-width:550px){
         height: 80%;
@@ -33,6 +35,9 @@
   .PlacedNums > ul {
       @media(max-width:550px){
         flex-direction: column;
+        display: flex;
+          flex-wrap: wrap;
+        
       }
       width: 100%;
       display: flex;
@@ -47,7 +52,7 @@
       margin: 5px;
       list-style-type: none;
       width: 20%;
-      height: 15%;
+      height: 10%;
       color: blue;
       background: rgba(255,175,75,1);
       background: -moz-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);

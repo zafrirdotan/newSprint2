@@ -1,15 +1,27 @@
 var numsToPlace = [];
-var numsToDrop = [];
+var dropsClass = ['#drop1','#drop2'];
+var difficulty = [{level: 1,amount: 10},{level: 2,amount: 20},{level: 3,amount: 30},]
 // numsToDrag
 
 function init(){
- 
+    $('input').on('change', function() {
+        var $diff = $('input[name=difficulty]:checked').val() 
+        console.log('diffucility is : ', $diff);
+        $diff = parseInt($diff);
+        var amount = getDiffByLevel($diff);
+        amount++;
+        console.log('a is: ',amount);
+        drawPlacedNums(amount);
+        
+    });
     drawNumsToplace();
-    drawPlacedNums();
     readyDragDrop();
 }
 
 function drawNumsToplace(){
+    
+   
+    
     var elContainer = document.querySelector('.numsToPlace');
     var strHTML ='<ul>'
     for (var i = 1;i < 3;i++){
@@ -18,13 +30,16 @@ function drawNumsToplace(){
         strHTML += '<li id=drag' + i +' class="wiggle-me">'+ rand + '</li>';
     }
         elContainer.innerHTML = strHTML;
-        console.log('strHTML: ',strHTML);
+        // console.log('strHTML: ',strHTML);
+        console.log('nums to drop:',numsToPlace);
+        
 }
 
-function drawPlacedNums(){
+function drawPlacedNums(amount){
+    
     var elContainer = document.querySelector('.PlacedNums');
     var strHTML ='<ul class=winNums>';
-    for (var i = 1;i < 11;i++){
+    for (var i = 1;i < amount;i++){
         // var rand = parseInt((Math.random()*10)+1)
         if (i === numsToPlace[0]){
             strHTML += '<li id="drop'+ 1 +'"></li>';
@@ -53,6 +68,9 @@ function setDraggable(){
 }
 
 function setDroppable($drag1,$drag2){
+    console.log('drop1 :',dropsClass[0]);
+    console.log('drop2 :',dropsClass[1]);
+    
     $('#drop1').droppable({
         drop: function (e, ui) {
             var draggedNumId = ui.draggable.attr('id');
@@ -117,9 +135,9 @@ function isWin(){
              });
     if (win){
         alert('WIN');
-        var gChal = JSON.parse(localStorage.getItem('player'));
-        gChal[1].isSolved = true;
-        localStorage.setItem('player', JSON.stringify(gChal));
+        // var gChal = JSON.parse(localStorage.getItem('player'));
+        // gChal[1].isSolved = true;
+        // localStorage.setItem('player', JSON.stringify(gChal));
         // console.log('gchals after win: ',gChal);
         // window.location.href = getHomePage();
     }
@@ -133,3 +151,15 @@ function getHomePage(){
 }
 
 init();
+
+
+function getDiffByLevel(level) {
+        console.log('level  is ', level);
+        var  levelCell = difficulty.filter(function(levelCell, i) {
+        console.log('diffculity in  is ',difficulty[i]);
+        return difficulty[i].level === level;
+    });
+    console.log('level cell ',levelCell);
+    
+    return levelCell[0].amount;
+}

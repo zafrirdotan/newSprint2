@@ -6306,8 +6306,9 @@ footer {
 
 @media (min-width: 767px) {
   .PlacedNums {
+    display: flex;
     width: 80%;
-    flex-wrap: nowrap; } }
+    flex-wrap: wrap; } }
 
 @media (max-width: 550px) {
   .PlacedNums {
@@ -6320,7 +6321,9 @@ footer {
 
 @media (max-width: 550px) {
   .PlacedNums > ul {
-    flex-direction: column; } }
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap; } }
 
 .PlacedNums > ul > li {
   display: flex;
@@ -6328,7 +6331,7 @@ footer {
   margin: 5px;
   list-style-type: none;
   width: 20%;
-  height: 15%;
+  height: 10%;
   color: blue;
   background: #ffaf4b;
   background: -moz-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
