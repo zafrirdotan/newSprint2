@@ -2,17 +2,17 @@ var gChals = [
     {
         id: 'chal1',
         name: 'The Garden',
-        isSolved: true
+        isSolved: false
     },
     {
         id: 'chal2',
         name: 'The Forest',
-        isSolved: true
+        isSolved: false
     },
     {
         id: 'chal3',
         name: 'The Beach',
-        isSolved: true
+        isSolved: false
     }
 ];
 
@@ -25,7 +25,7 @@ function getChalById(chalId) {
     });
     return chal[0];
 }
-console.log(getChalById('chal1'));
+// console.log(getChalById('chal1'));
 
 
 
@@ -35,9 +35,9 @@ function renderChals(selector) {
     gChals.forEach(function(chal,i){
         strHTML += '<div onclick="redirect(this)" id="' +chal.id + '" class="game '+ chal.id + '">'+ chal.name +'</div>';
     })
-        console.log('str: ',strHTML);
+        // console.log('str: ',strHTML);
         elContainer.innerHTML = strHTML;
-        console.log('elContainer: ', elContainer);
+        // console.log('elContainer: ', elContainer);
     
 }
 
@@ -50,7 +50,8 @@ function reportSolved(chalId){
  
 
  function goToNextLevel(id){
-     console.log('i am hire');
+    //  console.log('i am hire');
+     finishChal(id);
      upDateLS()
      window.location.href = id+'.html';
  }
@@ -60,17 +61,19 @@ function reportSolved(chalId){
  }
 
  function getDataLS() {
-       var tempGChals = localStorage.getItem('chals');
-       console.log('tempGChals: ', tempGChals);
+       var tempGChals = JSON.parse(localStorage.getItem('chals'));
+    //    console.log('tempGChals: ', tempGChals);
        return tempGChals;
  }
 
  function finishChal(id){
      console.log('id: ', id);
-     console.log('.id', '.' + id);
+    //  console.log('.id', '.' + id);
     //  console.log(getChalById('chal1'));
-    //  var chal = getChalById(id)
-    //  chal.isSolved = true;
+     var chal = getChalById(id);
+     chal.isSolved = true;
+     console.log('chal: ', chal);
+     if (id !== 'chal1')
      document.querySelector( '.' + id ).disabled = false; 
  }
 

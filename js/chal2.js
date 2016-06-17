@@ -1,13 +1,13 @@
 
 
-$(document).ready(function(){
-    var prevChal = 'chal1';
-    var gChals = getDataLS();
-    console.log('reportSolved(prevChal): ', reportSolved(prevChal));
+// $(document).ready(function(){
+//     var prevChal = 'chal1';
+//     var gChals = getDataLS();
+//     console.log('reportSolved(prevChal): ', reportSolved(prevChal));
     
-    if(!(reportSolved(prevChal))){window.location.href = prevChal+'.html';}
+//     if(!(reportSolved(prevChal))){window.location.href = prevChal+'.html';}
 
-});
+// });
 var numToPlace = [];
 // var gChals = JSON.parse(localStorage.getItem('daniel'));
 
@@ -108,9 +108,9 @@ function isWin(){
         gChal[1].isSolved = true;
         localStorage.setItem('player', JSON.stringify(gChal));
     //  console.log('after game 1 gchals',gChal);
-        console.log('gchals after win: ',gChal);
-        str = '/C:/coding%20acadmy/sprint2/index.html';
-        window.location = str;
+        // console.log('gchals after win: ',gChal);
+        // str = '/C:/coding%20acadmy/sprint2/index.html';
+        // window.location = str;
         
         
     }
