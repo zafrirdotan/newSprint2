@@ -4,13 +4,15 @@ var difficulty = [{level: 1,amount: 10},{level: 2,amount: 20},{level: 3,amount: 
     $('input').on('change', function() {
         var $diffic = $('input[name=difficulty]:checked').val() 
         $diffic = parseInt($diffic);
-        var amount = getDiffByLevel($diffic);
-        amount++;
+        var amount = getDiffByLevel($diffic) + 1;
         init(amount,$diffic)
         
     });
     
 function init(amount,diffic){
+    diffic = $('input[name=difficulty]:checked').val() 
+    diffic = parseInt(diffic);
+    amount = getDiffByLevel(diffic) + 1;
     console.log('amount',amount);
     numsToPlace = [];
     drawDraggables(diffic);
