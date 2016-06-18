@@ -41,8 +41,12 @@ function choiseClicked(){
             str = '#' + str;
             var num = parseInt($(str).text().match(/\d+/)[0], 10); 
             if (num === numOfSheeps) {
-                alert('WIN');
-                goToNextLevel('chal5');
+                $('.welcomePopUp').css('zIndex',2);
+                $('.welcomePopUp').show();
+                $('.messege').text('good job ,you finished all games');
+                $('.btnPlay')
+                .text('finish')
+                .attr("onclick","removePopup();goToNextLevel('chal5');");
             }
             else {
                 alert('try again');
