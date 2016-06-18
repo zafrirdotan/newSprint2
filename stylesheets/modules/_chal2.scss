@@ -8,14 +8,12 @@
       background: linear-gradient(to right, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
 }
 .welcomePopUp{
-     @media(max-width:550px){
-    height: 40%;
-         
-     }
-      @include background-gardient();
+    @media(max-width:550px){
+        height: 40%;
+    }
+    @include background-gardient();
     height: 30%;
     width: 50%;
-    // background: white;
     border: 2px solid  blue;
     border-radius: 10%;
     position: absolute;
@@ -45,10 +43,8 @@
     height: 95vh;
     width: 95vw;
     z-index: 0;
-    // border: 1px solid blue;
   }
   .statusGame2{
-    //   background: blue;
       height: 18%;
       width: 18%;
   }
@@ -64,7 +60,6 @@
       display: flex;
       width: 95%;
       height: 50%;
-    //   border: 1px solid green;
   }
   .staticNums > ul {
       @media(max-width:550px){
@@ -97,7 +92,6 @@
       display: flex;
       width: 80%;
       height: 15%;
-    //   border: 1px solid red;
   }
    .draggableNums > ul {
       width: 100%;
@@ -106,11 +100,11 @@
   }
 
   #drag1, #drag2{
-        @media(max-width:550px){
-          height: 45%;
-          width: 15%;
-        }
-         display: flex;
+      @media(max-width:550px){
+        height: 45%;
+        width: 15%; 
+      }
+      display: flex;
       justify-content: space-around;
       border: 2px solid blue; 
       width: 10%;

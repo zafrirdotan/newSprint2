@@ -1,8 +1,4 @@
-.game4{
-    
-}
 .game4container{
-
     background: url('../img/background_game4.png');
     background-size: cover;
     margin: 5px;
@@ -13,11 +9,11 @@
 }
 
 .sheepsContainer{
-      display: flex;
-      width: 95%;
-      height: 80%;
-      display: flex;
-      align-items: flex-end;
+    display: flex;
+    width: 95%;
+    height: 80%;
+    display: flex;
+    align-items: flex-end;
   }
   .sheepsContainer > img{
     height: 15%;
@@ -34,10 +30,10 @@
     align-self: center;
   }
   .choisesContainer{
-      display: flex;
-      width: 95%;
-      height: 15%;
-      z-index: 0;
+    display: flex;
+    width: 95%;
+    height: 15%;
+    z-index: 0;
   }
   
   .choisesContainer > ul{
@@ -58,14 +54,12 @@
   }
   
   .welcomePopUp{
-     @media(max-width:550px){
+    @media(max-width:550px){
     height: 40%;
-         
-     }
-      @include background-gardient();
+    }
+    @include background-gardient();
     height: 30%;
     width: 50%;
-    // background: white;
     border: 2px solid  blue;
     border-radius: 10%;
     position: absolute;
