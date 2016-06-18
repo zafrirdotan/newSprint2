@@ -6347,6 +6347,7 @@ footer {
 
 .staticNums > ul {
   width: 100%;
+  flex-wrap: wrap;
   height: 100%;
   display: flex;
   justify-content: space-around; }
