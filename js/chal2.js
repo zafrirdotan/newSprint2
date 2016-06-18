@@ -71,7 +71,7 @@ function setDroppable(dragsValues,dropsIds,dragsIds){
     // for (var i = 0; i < 2; i++) {
     //     $(dropsIds[i]).droppable({
     //         drop: function (e, ui) {
-   //              var draggedId = $('#' + ui.draggable.attr('id'));
+    //              var draggedId = $('#' + ui.draggable.attr('id'));
     //             $(ui.draggable).css('position', 'static').appendTo(this);           //the dragges item ,define its css   
     //             $(dropsIds[i]).replaceWith('<li>' + draggedId.html() + '<li>');                 //replace with
     //             $(".staticNums li").eq(dragsNums[i]).remove();                                  //remove the prev item
