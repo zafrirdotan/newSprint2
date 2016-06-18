@@ -80,11 +80,11 @@ function creatQues(maxNum) {
              if(gDroped === gAnss.length){
                 alert('iiiihaaa');
                 gIndexLevel++;
+                // the game ends herrrrrrrrrrrrrre 
+                if( gIndexLevel === 3 ){ goToNextLevel('chal4');};
+
                 $('.level').html('level ' + gLevels[gIndexLevel].level)
                 $('.game3Img').css('background-image', 'url('+ gImgs[gIndexLevel].src +')');
-                // the game ends herrrrrrrrrrrrrre 
-                // if( gIndexLevel = 3 ) goToNextLevel(chal2);
-                // goToNextLevel('game4')
                 creatQues(gLevels[gIndexLevel].maxNum);
              }
             }     
