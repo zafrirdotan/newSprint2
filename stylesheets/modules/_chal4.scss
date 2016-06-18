@@ -19,25 +19,34 @@
 
 }
 
-.upCont4{
+.sheepsContainer{
       display: flex;
       width: 95%;
       height: 80%;
-    //   border: 1px solid green;
+      border: 1px solid green;
     //   background: url('../img/background_game4.png');
     //   background-size: cover;
       z-index: 0;
       display: flex;
       align-items: flex-end;
+      
   }
-  .upCont4 > img{
+  .sheepsContainer > img{
     height: 60px;
     width: 60px;    
     margin: 10px;
       
   }
-  
-  .downCont4{
+   .sheepsContainer > img:nth-child(2){
+    align-self: center;
+  }
+    .sheepsContainer > img:nth-child(4){
+    align-self: flex-start;
+  }
+   .sheepsContainer > img:nth-child(5){
+    align-self: center;
+  }
+  .choisesContainer{
       display: flex;
       width: 95%;
       height: 15%;
@@ -46,7 +55,7 @@
       
   }
   
-  .downCont4 > ul{
+  .choisesContainer > ul{
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -55,7 +64,7 @@
     // align-items: center;
   }
   
-  .downCont4 > ul > li{
+  .choisesContainer > ul > li{
     list-style-type: none;
     background: yellow;
     color: blue;

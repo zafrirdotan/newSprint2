@@ -1,4 +1,4 @@
-var numsToPlace = [];
+var numsToPlace;
 // var dropsClass = ['#drop1','#drop2'];
 // var difficulty = [{level: 1,amount: 10},{level: 2,amount: 20},{level: 3,amount: 30},];
 
@@ -12,6 +12,7 @@ var numsToPlace = [];
     // });
     
 function init(amount){
+    numsToPlace = [];
     drawDraggables();
     drawStaticNums();
     readyDragDrop();

@@ -1,32 +1,16 @@
 var numOfSheeps;
 
-renderChoises();
-renderSheeps();
 
+function init(){
+    drawChoises();
+    drawSheeps();
+    choiseClicked();
+}
 
-$('#choise1,#choise2,#choise3,#choise4,#choise5').click(function(){
-    $('body').click(function( event ) {
-        var str = event.target.id;
-        str = '#' + str;
-        var num = parseInt($(str).text().match(/\d+/)[0], 10); 
-        if (num === numOfSheeps) {
-            console.log('WIN');
-            alert('WIN');
-            goToNextLevel('chal5');
-
-        }
-        else {
-            console.log('NOT');
-            alert('NOT');
-        }                     
-    });
-});
-
-
-function renderSheeps(){
+function drawSheeps(){
     var rand = parseInt(Math.random()*5) + 1;
     numOfSheeps = rand;
-    var elContainer = document.querySelector('.upCont4');
+    var elContainer = document.querySelector('.sheepsContainer');
     var strHTML ='';
     for (var i = 0;i < rand ; i++){
         if (i%2 === 0){
@@ -39,8 +23,8 @@ function renderSheeps(){
     elContainer.innerHTML = strHTML;
 }
 
-function renderChoises(){
-    var elContainer = document.querySelector('.downCont4');
+function drawChoises(){
+    var elContainer = document.querySelector('.choisesContainer');
     var strHTML ='<ul>';
     for (var i = 1;i < 6 ; i++){
         strHTML += ' <li id="choise'+ i +'">'+ i + '</li>';
@@ -48,3 +32,24 @@ function renderChoises(){
     strHTML +='</ul>';
     elContainer.innerHTML = strHTML;
 }
+
+function choiseClicked(){
+    $('#choise1,#choise2,#choise3,#choise4,#choise5').click(function(){
+        $('body').click(function( event ) {
+            $('body').unbind();
+            var str = event.target.id;
+            str = '#' + str;
+            var num = parseInt($(str).text().match(/\d+/)[0], 10); 
+            if (num === numOfSheeps) {
+                alert('WIN');
+                goToNextLevel('chal3');
+            }
+            else {
+                alert('try again');
+            }                     
+        });
+    });
+    
+}
+
+init();
