@@ -1,15 +1,28 @@
 var numOfSheeps;
+var difficulty = [{level: 1,amount: 5},{level: 2,amount: 7},{level: 3,amount: 12},];
 
+    $('input').on('change', function() {
+        var $diffic = $('input[name=difficulty]:checked').val() 
+        $diffic = parseInt($diffic);
+        var amount = getDiffByLevel($diffic);
+        amount++;
+        console.log('amount',amount);
+        
+        init(amount,$diffic)
+        
+    });
 
-function init(){
-    drawChoises();
-    drawSheeps();
+function init(amount){
+    drawSheeps(amount);
+    drawChoises(numOfSheeps);
     choiseClicked();
 }
 
-function drawSheeps(){
-    var rand = parseInt(Math.random()*5) + 1;
+function drawSheeps(amount){
+    var rand = parseInt(Math.random()*amount) + 1;
     numOfSheeps = rand;
+    console.log('numOfSheeps',numOfSheeps);
+    
     var elContainer = document.querySelector('.sheepsContainer');
     var strHTML ='';
     for (var i = 0;i < rand ; i++){
@@ -23,10 +36,10 @@ function drawSheeps(){
     elContainer.innerHTML = strHTML;
 }
 
-function drawChoises(){
+function drawChoises(numOfSheeps){
     var elContainer = document.querySelector('.choisesContainer');
     var strHTML ='<ul>';
-    for (var i = 1;i < 6 ; i++){
+    for (var i = 1;i < numOfSheeps + 1 ; i++){
         strHTML += ' <li id="choise'+ i +'">'+ i + '</li>';
     }
     strHTML +='</ul>';
@@ -34,8 +47,8 @@ function drawChoises(){
 }
 
 function choiseClicked(){
-    $('#choise1,#choise2,#choise3,#choise4,#choise5').click(function(){
-        $('body').click(function( event ) {
+    // $('#choise1,#choise2,#choise3,#choise4,#choise5').click(function(){
+        $('li').click(function( event ) {
             $('body').unbind();
             var str = '#' + event.target.id;
             var num = parseInt($(str).text().match(/\d+/)[0], 10); 
@@ -53,8 +66,15 @@ function choiseClicked(){
                 alert('try again');
             }                     
         });
-    });
+    // });
     
 }
 
-init();
+function getDiffByLevel(level) {
+    var levelCell = difficulty.filter(function (levelCell, i) {
+        return difficulty[i].level === level;
+    });
+    return levelCell[0].amount;
+}
+
+init(5);

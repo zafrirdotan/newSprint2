@@ -1,5 +1,4 @@
 var numsToPlace;
-// var dropsClass = ['#drop1','#drop2'];
 var difficulty = [{level: 1,amount: 10},{level: 2,amount: 20},{level: 3,amount: 30},];
 
     $('input').on('change', function() {
@@ -8,15 +7,11 @@ var difficulty = [{level: 1,amount: 10},{level: 2,amount: 20},{level: 3,amount: 
         var amount = getDiffByLevel($diffic);
         amount++;
         init(amount,$diffic)
-        // setNumOfDrag();
         
     });
     
 function init(amount,diffic){
     console.log('amount',amount);
-    // console.log('diffic',diffic);
-    
-    // console.log('diffic',diffic);
     numsToPlace = [];
     drawDraggables(diffic);
     drawStaticNums(amount);
@@ -69,24 +64,9 @@ function setDraggable(drags){
 }
 
 function setDroppable(dragsValues,dropsIds,dragsIds){
-    // console.log('drop1 :',dropsClass[0]);
-    console.log('dragsNums : ',dragsValues);
-    console.log('dropsIds :',dropsIds);
-    console.log('dragsIds : ',dragsIds);
-    
-    // for (var i = 0; i < 2; i++) {
-    //     $(dropsIds[i]).droppable({
-    //         drop: function (e, ui) {
-    //              var draggedId = $('#' + ui.draggable.attr('id'));
-    //             $(ui.draggable).css('position', 'static').appendTo(this);           //the dragges item ,define its css   
-    //             $(dropsIds[i]).replaceWith('<li>' + draggedId.html() + '<li>');                 //replace with
-    //             $(".staticNums li").eq(dragsNums[i]).remove();                                  //remove the prev item
-    //             isWin();
-
-    //         }
-    //     });
-    // }
-    // console.log('what: ',$(ui-droppable))
+    // console.log('dragsNums : ',dragsValues);
+    // console.log('dropsIds :',dropsIds);
+    // console.log('dragsIds : ',dragsIds);
     $(dropsIds[0]).droppable({
         drop: function (e, ui) {
             var draggedId = $('#' + ui.draggable.attr('id'));
@@ -94,7 +74,6 @@ function setDroppable(dragsValues,dropsIds,dragsIds){
             $(".staticNums li").eq(dragsValues[0]).remove();                                  //remove the prev item
             $(ui.draggable).css('position', 'static').appendTo(this);           //the dragged item ,define its css   
             isWin();
-
         }
     });
     $(dropsIds[1]).droppable({
@@ -114,6 +93,7 @@ function readyDragDrop(){
     var dragsValues = [];
     var dragsIds = setNumOfDrag(1);
     var dropsIds = setNumOfDrops(1);
+    
     dragsValues.push(drag1,drag2);
     
     setDraggable(dragsIds);

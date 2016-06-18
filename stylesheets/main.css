@@ -6484,7 +6484,8 @@ footer {
   width: 95%;
   height: 80%;
   display: flex;
-  align-items: flex-end; }
+  align-items: flex-end;
+  flex-wrap: wrap; }
 
 .sheepsContainer > img {
   height: 15%;
@@ -6503,13 +6504,14 @@ footer {
 .choisesContainer {
   display: flex;
   width: 95%;
-  height: 15%;
+  height: 25%;
   z-index: 0; }
 
 .choisesContainer > ul {
   width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-end; }
 
