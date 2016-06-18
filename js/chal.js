@@ -57,7 +57,7 @@ function reportSolved(chalId){
  function goToNextLevel(id){
      console.log('id in gotonext level');
      if (id === 'chal5'){
-         var homePageStr = getHomePage();
+        var homePageStr = getHomePage();
         window.location.href = homePageStr;
      } else{
         finishChal(id);

@@ -2,10 +2,7 @@
     
 }
 .game4container{
-//    background: url('../img/background.jpg');
-    // background-repeat: no-repeat;
-    // background-size: cover;
-    // background: red;
+
     background: url('../img/background_game4.png');
     background-size: cover;
     margin: 5px;
@@ -13,29 +10,19 @@
     flex-direction: column;
     height: 95vh;
     width: 95vw;
-
-
-    border: 1px solid blue;
-
 }
 
 .sheepsContainer{
       display: flex;
       width: 95%;
       height: 80%;
-      border: 1px solid green;
-    //   background: url('../img/background_game4.png');
-    //   background-size: cover;
-      z-index: 0;
       display: flex;
       align-items: flex-end;
-      
   }
   .sheepsContainer > img{
-    height: 60px;
-    width: 60px;    
+    height: 15%;
+    width: 15%;    
     margin: 10px;
-      
   }
    .sheepsContainer > img:nth-child(2){
     align-self: center;
@@ -50,9 +37,7 @@
       display: flex;
       width: 95%;
       height: 15%;
-    //   border: 1px solid red;
       z-index: 0;
-      
   }
   
   .choisesContainer > ul{
@@ -61,7 +46,6 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: flex-end;
-    // align-items: center;
   }
   
   .choisesContainer > ul > li{

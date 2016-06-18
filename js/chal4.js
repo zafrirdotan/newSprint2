@@ -42,7 +42,7 @@ function choiseClicked(){
             var num = parseInt($(str).text().match(/\d+/)[0], 10); 
             if (num === numOfSheeps) {
                 alert('WIN');
-                goToNextLevel('chal3');
+                goToNextLevel('chal5');
             }
             else {
                 alert('try again');
