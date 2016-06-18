@@ -13,7 +13,7 @@ function init(amount,diffic){
     diffic = $('input[name=difficulty]:checked').val() 
     diffic = parseInt(diffic);
     amount = getDiffByLevel(diffic) + 1;
-    console.log('amount',amount);
+    // console.log('amount',amount);
     numsToPlace = [];
     drawDraggables(diffic);
     drawStaticNums(amount);
@@ -21,8 +21,7 @@ function init(amount,diffic){
 }
 
 function drawDraggables(diffic){
-    console.log('diffic',diffic);
-    
+    // console.log('diffic',diffic);
     var elContainer = document.querySelector('.draggableNums');
     var strHTML ='<ul>';
     var i = 1;
@@ -66,9 +65,6 @@ function setDraggable(drags){
 }
 
 function setDroppable(dragsValues,dropsIds,dragsIds){
-    // console.log('dragsNums : ',dragsValues);
-    // console.log('dropsIds :',dropsIds);
-    // console.log('dragsIds : ',dragsIds);
     $(dropsIds[0]).droppable({
         drop: function (e, ui) {
             var draggedId = $('#' + ui.draggable.attr('id'));
@@ -88,7 +84,7 @@ function setDroppable(dragsValues,dropsIds,dragsIds){
         }
     });
 }
-
+//calls setDraggable and setDroppable with the right parameters, not ready!!!!
 function readyDragDrop(){
     var drag1 = $('#drag1').html();
     var drag2 = $('#drag2').html();
