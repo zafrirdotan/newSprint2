@@ -13,7 +13,7 @@ var difficulty = [{level: 1,amount: 10},{level: 2,amount: 20},{level: 3,amount: 
     
 function init(amount){
     drawDraggables();
-    drawPlacedNums();
+    drawStaticNums();
     readyDragDrop();
 }
 
@@ -21,17 +21,20 @@ function drawDraggables(){
     
     var elContainer = document.querySelector('.numsToPlace');
     var strHTML ='<ul>';
-    
-    for (var i = 1;i < 3;i++){
-        var rand = parseInt((Math.random()*10)+1);
-        numsToPlace.push(rand);
-        strHTML += '<li id=drag' + i +' class="wiggle-me">'+ rand + '</li>';
-    }
+    var i = 1;
+        while (numsToPlace.length < 2){
+            var rand = parseInt((Math.random()*10)+1);
+            if (!numsToPlace.includes(rand)){
+                numsToPlace.push(rand);
+                strHTML += '<li id=drag' + i +' class="wiggle-me">'+ rand + '</li>';
+                i++;
+            }
+        }
     elContainer.innerHTML = strHTML;
         
 }
 
-function drawPlacedNums(){
+function drawStaticNums(){
     
     var elContainer = document.querySelector('.PlacedNums');
     var strHTML ='<ul class=winNums>';
@@ -58,22 +61,19 @@ function setDraggable(drags){
     }
 }
 
-function setDroppable($drags,dropsIds,dragsIds){
+function setDroppable(dragsNums,dropsIds,dragsIds){
     // console.log('drop1 :',dropsClass[0]);
-    console.log('$drags : ',$drags);
+    console.log('dragsNums : ',dragsNums);
     console.log('dropsIds :',dropsIds);
     console.log('dragsIds : ',dragsIds);
     
     // for (var i = 0; i < 2; i++) {
     //     $(dropsIds[i]).droppable({
     //         drop: function (e, ui) {
-    //             var draggedNumId = ui.draggable.attr('id');
-    //             var draggedClassName = '#' + draggedNumId;
-    //             var $dr = $(draggedClassName);
-    //             var num = $dr.html();
+   //              var draggedId = $('#' + ui.draggable.attr('id'));
     //             $(ui.draggable).css('position', 'static').appendTo(this);           //the dragges item ,define its css   
-    //             $(dropsIds[i]).replaceWith('<li>' + num + '<li>');                 //replace with
-    //             $(".winNums li").eq($drags[i]).remove();                                  //remove the prev item
+    //             $(dropsIds[i]).replaceWith('<li>' + draggedId.html() + '<li>');                 //replace with
+    //             $(".winNums li").eq(dragsNums[i]).remove();                                  //remove the prev item
     //             isWin();
 
     //         }
@@ -81,26 +81,20 @@ function setDroppable($drags,dropsIds,dragsIds){
     // }
     $(dropsIds[0]).droppable({
         drop: function (e, ui) {
-            var draggedNumId = ui.draggable.attr('id');
-            var draggedClassName = '#' + draggedNumId;
-            var $dr = $(draggedClassName);
-            var num = $dr.html();
+            var draggedId = $('#' + ui.draggable.attr('id'));
             $(ui.draggable).css('position', 'static').appendTo(this);           //the dragges item ,define its css   
-            $(dropsIds[0]).replaceWith('<li>'+ num +'<li>');                 //replace with
-            $(".winNums li").eq($drags[0]).remove();                                  //remove the prev item
+            $(dropsIds[0]).replaceWith('<li>'+ draggedId.html() +'<li>');                 //replace with
+            $(".winNums li").eq(dragsNums[0]).remove();                                  //remove the prev item
             isWin();
 
         }
     });
     $(dropsIds[1]).droppable({
         drop: function (e, ui) {
-            var draggedNumId = ui.draggable.attr('id');
-            var draggedClassName = '#' + draggedNumId;
-            var $dr = $(draggedClassName);
-            var num = $dr.html();
+            var draggedId = $('#' + ui.draggable.attr('id'));
             $(ui.draggable).css('position', 'static').appendTo(this);
-            $(dropsIds[1]).replaceWith('<li>'+ num +'<li>');
-            $(".winNums li").eq($drags[1]).remove();
+            $(dropsIds[1]).replaceWith('<li>'+ draggedId.html() +'<li>');
+            $(".winNums li").eq(dragsNums[1]).remove();
             isWin();
         }
     });
@@ -117,6 +111,7 @@ function readyDragDrop(){
     setDraggable(dragsIds);
     setDroppable($drags,dropsIds,dragsIds);
 }
+
 function setNumOfDrag(diff){
     var drags = [];
     numberOfDropDrag = diff * 2;
@@ -134,6 +129,7 @@ function setNumOfDrops(diff){
     }
     return drops;
 }
+
 function isWin(){
     
     var win = true;
@@ -151,11 +147,6 @@ function isWin(){
     } 
 }
 
-function getHomePage(){
-    return 'http://127.0.0.1:8080';
-}
-
-
 
 function getDiffByLevel(level) {
         var  levelCell = difficulty.filter(function(levelCell, i) {
@@ -163,6 +154,5 @@ function getDiffByLevel(level) {
         });
     return levelCell[0].amount;
 }
-
 
 init();
