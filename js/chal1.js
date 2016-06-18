@@ -6,46 +6,56 @@ $(document).ready(function(){
 
 var gImgs = [
     { 
-        name: 'DoraStar',
+        name: 'stars',
         Src: 'img/game1Imgs/1.gif'
     }, 
     { 
-        name: 'DoraStar',
+        name: 'rabbit',
         Src: 'img/game1Imgs/2.jpg'
     },
     { 
-        name: 'DoraStar',
+        name: 'beach',
         Src: 'img/game1Imgs/3.jpg'
     },
     { 
-        name: 'DoraStar',
+        name: 'crying',
         Src: 'img/game1Imgs/4.jpg'
-    }  
+    },
+    { 
+        name: 'walking',
+        Src: 'img/game1Imgs/5.jpg'
+    }    
 ];
 var gGame1Quess = [
     {
-        name: 'DoraStar',
+        name: 'Star',
         imgSrc: gImgs[0].Src,
-        trueAns: 'Dora is riching for the star',
-        falseAns: 'Dora is riching for the moon',
+        trueAns: 'Dora is reaching for the stars',
+        falseAns: 'Dora is reaching for the moon',
     },
     {
-        name: 'DoraStar',
+        name: 'rabbit',
         imgSrc: gImgs[1].Src,
-        trueAns: 'Dora is riching for the star',
-        falseAns: 'Dora is riching for the moon'
+        trueAns: 'Dora is holding a rabbit',
+        falseAns: 'Dora is holding a kangaroo'
     },
     {
-        name: 'DoraStar',
+        name: 'beach',
         imgSrc: gImgs[2].Src,
-        trueAns: 'Dora is riching for the star',
-        falseAns: 'Dora is riching for the moon'
+        trueAns: 'Dora is at the beach',
+        falseAns: 'Dora is on the moon'
     },
     {
-        name: 'DoraStar',
+        name: 'crying',
         imgSrc: gImgs[3].Src,
-        trueAns: 'Dora is riching for the star',
-        falseAns: 'Dora is riching for the moon'
+        trueAns: 'Dora is crying',
+        falseAns: 'Dora is smiling'
+    },
+    {
+        name: 'walking',
+        imgSrc: gImgs[4].Src,
+        trueAns: 'Dora is walking',
+        falseAns: 'Dora is swiming'
     }
 
 ];
@@ -57,6 +67,7 @@ $(document).ready(function(){
 
     // console.log('gChal: ', currName);
     renderQues(gGame1Quess, gCurrQues);
+   
 
 
 });
@@ -112,7 +123,7 @@ function button1Clicked(value, id) {
         $('.ans1').addClass('rightAns');
         
         gCurrQues++;
-
+        
         if (gCurrQues === gGame1Quess.length){
              alert('end of the game');
              goToNextLevel(chal2);
