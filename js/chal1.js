@@ -116,6 +116,7 @@ function button1Clicked(value, id) {
         if (gCurrQues === gGame1Quess.length){
              alert('end of the game');
              goToNextLevel(chal2);
+             // the game ends herrrrrrrrrrrrrre  and in line 163 also!
             //  var currName = JSON.parse(localStorage.getItem('currName'));
              var gChal = JSON.parse(localStorage.getItem('player'))
             //   localStorage.setItem('name', JSON.stringify(gCurrQues));
@@ -159,6 +160,7 @@ function button2Clicked(value, id) {
         if (gCurrQues === gGame1Quess.length) {
             alert('end of the game');
             goToNextLevel(chal2);
+            // the game ends herrrrrrrrrrrrrre  and in line 163 also!
             //  var currName = JSON.parse(localStorage.getItem('currName'));
              var gChal = JSON.parse(localStorage.getItem('player'));
              gChal[0].isSolved = true;

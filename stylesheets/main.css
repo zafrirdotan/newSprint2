@@ -6219,7 +6219,6 @@ body {
 header {
   display: flex;
   flex-flow: row wrap;
-  background-color: indigo;
   padding: 10px; }
 
 header h1 {
@@ -6422,6 +6421,11 @@ footer {
   flex-direction: column;
   justify-content: space-around;
   align-items: center; }
+
+.game3Container .level {
+  font-size: 7rem;
+  margin-bottom: -17rem;
+  margin-top: -22px; }
 
 .game3Container .cell {
   color: red; }
