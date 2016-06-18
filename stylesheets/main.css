@@ -6400,7 +6400,7 @@ footer {
   justify-content: center;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%; }
+  background-size: 76%; }
 
 .game3Img .grid {
   z-index: 1;
@@ -6420,7 +6420,7 @@ footer {
   flex-wrap: wrap;
   justify-content: center; }
 
-.ansBox {
+.ans {
   width: 29.6rem;
   height: 23rem;
   border: 0.1rem solid blue;

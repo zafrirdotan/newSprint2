@@ -2,22 +2,22 @@ var gChals = [
     {
         id: 'chal1',
         name: 'The Garden',
-        isSolved: false
+        isSolved: true
     },
     {
         id: 'chal2',
         name: 'The Forest',
-        isSolved: false
+        isSolved: true
     },
     {
         id: 'chal3',
         name: 'The Beach',
-        isSolved: false
+        isSolved: true
     },
     {
         id: 'chal4',
         name: 'The Mountain',
-        isSolved: false
+        isSolved: true
     }
 ];
 

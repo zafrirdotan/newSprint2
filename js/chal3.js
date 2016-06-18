@@ -16,94 +16,100 @@ var gImgs = [
 var gLevels = [
     {
         level: 1,
-        upToNum: 10
+        maxNum: 10
+    },
+    {
+        level: 2,
+        maxNum: 20
+    },
+    {
+        level: 3,
+        maxNum: 100
     }
 ];
 
-var gCurrLevel = 1;
+var gIndexLevel = 0;
 
 $(document).ready(function(){
-    console.log('gImgs[0].src: ',gImgs[0].src);
-    $('.game3Img').css('background-image', 'url('+ gImgs[0].src +')');
-    creatQues()
+   
+    $('.game3Img').css('background-image', 'url('+ gImgs[gIndexLevel].src +')');
+
+    creatQues(gLevels[gIndexLevel].maxNum);
    
 })
 
 
 
 
-function creatQues() {
+function creatQues(maxNum) {
 
-    var gArrOfAns = [];
-    var gQuess =[];
     var gAnss = [];
+    var gQuess =[];
     var strHTMLQues ='';
     var containerQues = document.querySelector('.game3Img');
-    
     var strHTMLAns = '';
     var containerAns = document.querySelector('.game3Ans');
 
+    var gDroped = 0;
+
     for ( var i = 0 ; gAnss.length < 9; i++) {
-        var a = Math.ceil(Math.random()*10);
-        var b = Math.ceil(Math.random()*10);
+        var a = Math.ceil(Math.random()*maxNum);
+        var b = Math.ceil(Math.random()*maxNum);
         var ans = a + b;
-        if(gAnss.indexOf(ans) !== -1) continue;
-        gAnss.push(ans);
+        if(gAnss.indexOf(ans) !== -1){ 
+            i--;
+            continue;
+        }
         var strQues = a + '+' + b;
-        var quesClass = ans +'&' + i;
-        var quesAndAns = { strQues, ans, quesClass};
-        strHTMLQues += '<div class="grid" id='+ i +'" >' + strQues  + '</div>';
+        var quesAndAns = { strQues, ans};
+        strHTMLQues += '<div class="grid" id='+ i +'>' + strQues  + '</div>';
         
         gQuess.push(quesAndAns);
-        gArrOfAns.push(quesAndAns);    
+        gAnss.push(ans);    
     }
     containerQues.innerHTML = strHTMLQues;
     
    
     gQuess.forEach(function(quesAndAns, i){
         $('#'+ i).droppable({
-        scope: quesAndAns.quesClass,
-        hoverClass: "drop-hover",
-        tolerance: "intersect",
+        scope: quesAndAns.ans,
         drop: function( event, ui ) {
-             $('.'+ quesAndAns.quesClass).addClass('invisible' );
-            } 
-            
+             $('#'+ i).addClass('invisible');
+             $('#'+ quesAndAns.ans +'id').addClass('invisible');
+             gDroped++
+             if(gDroped === gAnss.length){
+                alert('iiiihaaa');
+                gIndexLevel++;
+                $('.game3Img').css('background-image', 'url('+ gImgs[gIndexLevel].src +')');
+                // if( gIndexLevel = 3 ) goToNextLevel(chal2);
+                creatQues(gLevels[gIndexLevel].maxNum);
+             }
+            }     
         });
-        console.log('quesAndAns ',quesAndAns);
+            console.log('quesAndAns.ans: ',quesAndAns.ans, typeof(quesAndAns.ans));
     });
 
-//   need to solve this
-    // gArrOfAns.sort(function(a,b){
-    //     return a-b;
-    // })
+   
+    gAnss.sort(function(a,b){
+        return a-b;
+    })
 
-    gArrOfAns.forEach(function(quesAndAns, j) {
-        strHTMLAns += '<div class="ansBox '+ quesAndAns.quesClass + '" id="'+ quesAndAns.ans + 'id' + j + '">' + quesAndAns.ans + '</div>';   
-        });           
+    gAnss.forEach(function(ans, j) {
+        strHTMLAns += '<div class="ans" id="'+ ans + 'id">' + ans + '</div>';   
+        }); 
+
     containerAns.innerHTML = strHTMLAns;
 
-            console.log('draggable');
-    gArrOfAns.forEach(function(quesAndAns, j) {
+    gAnss.forEach(function(ans, j) {
         
-        
-        $('#'+ quesAndAns.ans +'id'+ j).draggable({
-            addClasses: false,
+          console.log('ans',ans, typeof(ans));
+        $('#'+ans+'id').draggable({
             revert: "invalid",
             revertDuration: 200,
-            scope: quesAndAns.quesClass,
-            snap: true,
-            snapMode: "inner",
-            snapTolerance: 100,
-           
-                
-           
-            
+            scope: ans,
 
          
         });
-            
-          console.log('quesAndAns ',quesAndAns);
     })
     
 }
