@@ -56,12 +56,12 @@ function reportSolved(chalId){
 
  function goToNextLevel(id){
      console.log('id in gotonext level');
-     finishChal(id);
-     upDateLS()
-     if (id === 'chal4'){
+     if (id === 'chal5'){
          var homePageStr = getHomePage();
         window.location.href = homePageStr;
      } else{
+        finishChal(id);
+        upDateLS()
         window.location.href = id+'.html';
          
      }
@@ -84,7 +84,7 @@ function reportSolved(chalId){
      var chal = getChalById(id);
      chal.isSolved = true;
      console.log('chal: ', chal);
-     if (id !== 'chal1')
+     if (id !== 'chal1' && id !== 'chal3') ///when zaki finishes win condition you can delete
      document.querySelector( '.' + id ).disabled = false; 
  }
 
