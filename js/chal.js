@@ -83,8 +83,8 @@ function reportSolved(chalId){
      var chal = getChalById(id);
      chal.isSolved = true;
      console.log('chal: ', chal);
-     if (id !== 'chal1' && id !== 'chal3') ///when zaki finishes win condition you can delete
-     document.querySelector( '.' + id ).disabled = false; 
+    //  if (id !== 'chal1' && id !== 'chal3') ///when zaki finishes win condition you can delete
+    //  document.querySelector( '.' + id ).disabled = false; 
  }
 
 function removePopup(){
