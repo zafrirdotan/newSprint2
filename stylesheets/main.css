@@ -6470,7 +6470,6 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-image: url("../img/game3Imgs/elephant.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%; }
@@ -6493,13 +6492,19 @@ footer {
   flex-wrap: wrap;
   justify-content: center; }
 
-.ans {
+.ansBox {
   width: 29.6rem;
   height: 23rem;
   border: 0.1rem solid blue;
   font-size: 8rem;
   padding: 5rem;
   text-align: center; }
+
+.drop-hover {
+  background-color: green; }
+
+.invisible {
+  opacity: 0; }
 
 .game4container {
   background: url("../img/background_game4.png");
