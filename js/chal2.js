@@ -162,4 +162,5 @@ function isWin(){
 //     return levelCell[0].amount;
 // }
 
+
 init();

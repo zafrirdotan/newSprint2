@@ -91,3 +91,8 @@ function reportSolved(chalId){
 function getHomePage(){
     return 'http://127.0.0.1:8080';
 }
+
+function removePopup(){
+    $('.welcomePopUp').css('zIndex',-1);
+    $('.welcomePopUp').hide();
+}
