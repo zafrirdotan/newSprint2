@@ -1,36 +1,30 @@
 var numsToPlace;
 // var dropsClass = ['#drop1','#drop2'];
-var difficulty = [{level: 1,amount: 10},{level: 2,amount: 20},{level: 3,amount: 30},];
+// var difficulty = [{level: 1,amount: 10},{level: 2,amount: 20},{level: 3,amount: 30},];
 
-    $('input').on('change', function() {
-        var $diffic = $('input[name=difficulty]:checked').val() 
-        $diffic = parseInt($diffic);
-        var amount = getDiffByLevel($diffic);
-        amount++;
-        init(amount,$diffic)
-        // setNumOfDrag();
-        
-    });
+    // $('input').on('change', function() {
+    //     var $diff = $('input[name=difficulty]:checked').val() 
+    //     $diff = parseInt($diff);
+    //     var amount = getDiffByLevel($diff);
+    //     amount++;
+    //     init(amount)
+    //     setNumOfDrag($diff);
+    // });
     
-function init(amount,diffic){
-    console.log('amount',amount);
-    // console.log('diffic',diffic);
-    
-    // console.log('diffic',diffic);
+function init(amount){
     numsToPlace = [];
-    drawDraggables(diffic);
-    drawStaticNums(amount);
+    drawDraggables();
+    drawStaticNums();
     readyDragDrop();
 }
 
-function drawDraggables(diffic){
-    console.log('diffic',diffic);
+function drawDraggables(){
     
     var elContainer = document.querySelector('.draggableNums');
     var strHTML ='<ul>';
     var i = 1;
         while (numsToPlace.length < 2){
-            var rand = parseInt((Math.random()*10*diffic)+1);
+            var rand = parseInt((Math.random()*10)+1);
             if (!numsToPlace.includes(rand)){
                 numsToPlace.push(rand);
                 strHTML += '<li id=drag' + i +' class="draggable">'+ rand + '</li>';
@@ -41,12 +35,12 @@ function drawDraggables(diffic){
         
 }
 
-function drawStaticNums(amount){
+function drawStaticNums(){
     
     var elContainer = document.querySelector('.staticNums');
     var strHTML ='<ul class=staticNums>';
     
-    for (var i = 1;i < amount;i++){
+    for (var i = 1;i < 11;i++){
         if (i === numsToPlace[0]){
             strHTML += '<li id="drop'+ 1 +'"></li>';
         } else if (i === numsToPlace[1]){
@@ -164,12 +158,12 @@ function isWin(){
 }
 
 
-function getDiffByLevel(level) {
-    var levelCell = difficulty.filter(function (levelCell, i) {
-        return difficulty[i].level === level;
-    });
-    return levelCell[0].amount;
-}
+// function getDiffByLevel(level) {
+//         var  levelCell = difficulty.filter(function(levelCell, i) {
+//             return difficulty[i].level === level;
+//         });
+//     return levelCell[0].amount;
+// }
 
 
-init(11,1);
+init();

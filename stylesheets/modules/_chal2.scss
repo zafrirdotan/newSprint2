@@ -9,10 +9,10 @@
 }
 .welcomePopUp{
     @media(max-width:550px){
-        height: 40%;
+        height: 70%;
     }
     @include background-gardient();
-    height: 30%;
+    height: 55%;
     width: 50%;
     border: 2px solid  blue;
     border-radius: 10%;
@@ -68,6 +68,8 @@
         flex-wrap: wrap;
     }
     width: 100%;
+    flex-wrap: wrap;
+    
     height: 100%;
     display: flex;
     justify-content: space-around;

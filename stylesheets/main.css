@@ -6290,7 +6290,7 @@ footer {
   background: -o-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
   background: -ms-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
   background: linear-gradient(to right, #ffaf4b 0%, #ff920a 100%);
-  height: 30%;
+  height: 55%;
   width: 50%;
   border: 2px solid  blue;
   border-radius: 10%;
@@ -6306,7 +6306,7 @@ footer {
 
 @media (max-width: 550px) {
   .welcomePopUp {
-    height: 40%; } }
+    height: 70%; } }
 
 .welcomePopUp > button {
   height: 15%;
@@ -6346,6 +6346,7 @@ footer {
 
 .staticNums > ul {
   width: 100%;
+  flex-wrap: wrap;
   height: 100%;
   display: flex;
   justify-content: space-around; }
