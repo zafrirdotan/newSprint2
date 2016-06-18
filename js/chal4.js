@@ -17,10 +17,8 @@ function init(amount){
 }
 
 function drawSheeps(amount){
-    var rand = parseInt(Math.random()*5) + 6;
+    var rand = parseInt(Math.random()*5) + amount;
     numOfSheeps = rand;
-    console.log('numOfSheeps',numOfSheeps);
-    
     var elContainer = document.querySelector('.sheepsContainer');
     var strHTML ='';
     for (var i = 0;i < rand ; i++){
@@ -28,7 +26,6 @@ function drawSheeps(amount){
             strHTML += '<img src="img/game4/1.png" alt="">' 
         } else {
             strHTML += '<img src="img/game4/2.png" alt="">' 
-            
         }
     }
     elContainer.innerHTML = strHTML;
@@ -45,12 +42,11 @@ function drawChoises(numOfSheeps){
 }
 
 function choiseClicked(){
-    // $('#choise1,#choise2,#choise3,#choise4,#choise5').click(function(){
         $('li').click(function( event ) {
             $('body').unbind();
             var str = '#' + event.target.id;
-            var num = parseInt($(str).text().match(/\d+/)[0], 10); 
-            if (num === numOfSheeps) {
+            var selectedChoise = parseInt($(str).text().match(/\d+/)[0], 10); 
+            if (selectedChoise === numOfSheeps) {
                 $('.welcomePopUp')
                 .css('zIndex',2)
                 .show();
@@ -64,7 +60,6 @@ function choiseClicked(){
                 alert('try again');
             }                     
         });
-    // });
     
 }
 
@@ -75,4 +70,4 @@ function getDiffByLevel(level) {
     return levelCell[0].amount;
 }
 
-init(5);
+init();

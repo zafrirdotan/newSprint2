@@ -121,10 +121,10 @@ function isWin(){
     var win = true;
     var i = 1;
     $("li").each(function(){
-                var x = parseInt($(this).text())
-                if ( x !== i) win = false;
-                i++;
-             });
+        var x = parseInt($(this).text())
+        if ( x !== i) win = false;
+        i++;
+    });
     if (win){
          $('.welcomePopUp')
             .css('zIndex',2)
@@ -146,4 +146,4 @@ function getDiffByLevel(level) {
 }
 
 
-init(11,1);
+init();
