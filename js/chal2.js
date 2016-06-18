@@ -146,6 +146,7 @@ function isWin(){
              });
     if (win){
         alert('WIN');
+        goToNextLevel('chal3');
     }
     else{
         console.log('not win yet');
