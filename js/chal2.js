@@ -146,8 +146,9 @@ function isWin(){
                 i++;
              });
     if (win){
-         $('.welcomePopUp').css('zIndex',2);
-         $('.welcomePopUp').show();
+         $('.welcomePopUp')
+            .css('zIndex',2)
+            .show();
          $('.messege').text('good job ,you may go to the next level');
          $('.btnPlay').attr("onclick","removePopup();goToNextLevel('chal3');");
     }

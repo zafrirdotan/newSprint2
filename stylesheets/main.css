@@ -6318,7 +6318,7 @@ footer {
   font-size: 2em; }
 
 .game2container {
-  background: url("../img/background.jpg");
+  background: url("../img/game2/background.jpg");
   background-size: cover;
   margin: 5px;
   display: flex;
@@ -6470,7 +6470,7 @@ footer {
   opacity: 0; }
 
 .game4container {
-  background: url("../img/background_game4.png");
+  background: url("../img/game4/background.png");
   background-size: cover;
   margin: 5px;
   display: flex;
