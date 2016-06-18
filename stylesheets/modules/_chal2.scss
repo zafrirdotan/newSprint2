@@ -1,98 +1,120 @@
 @mixin background-gardient(){
-      background: rgba(255,175,75,1);
-      background: -moz-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
-      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(255,146,10,1)));
-      background: -webkit-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
-      background: -o-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
-      background: -ms-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
-      background: linear-gradient(to right, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+    background: rgba(255,175,75,1);
+    background: -moz-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,175,75,1)), color-stop(100%, rgba(255,146,10,1)));
+    background: -webkit-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+    background: -o-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+    background: -ms-linear-gradient(left, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
+    background: linear-gradient(to right, rgba(255,175,75,1) 0%, rgba(255,146,10,1) 100%);
 }
-
+.welcomePopUp{
+    @media(max-width:550px){
+        height: 40%;
+    }
+    @include background-gardient();
+    height: 30%;
+    width: 50%;
+    border: 2px solid  blue;
+    border-radius: 10%;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.welcomePopUp > button{
+    height: 15%;
+    width: 35%;
+}
+.welcomePopUp > p{
+    color: white;
+    font-size: 2em;
+}
 .game2container{
-    background: url('../img/background.jpg');
+    background: url('../img/game2/background.jpg');
     background-size: cover;
     margin: 5px;
     display: flex;
     flex-wrap: wrap;
     height: 95vh;
     width: 95vw;
-    // border: 1px solid blue;
+    z-index: 0;
   }
-  .statusGame2{
-    //   background: blue;
-      height: 18%;
-      width: 18%;
+.statusGame2{
+    height: 18%;
+    width: 18%;
   }
   
-  .staticNums{
-      @media(min-width:767px){
-          display: flex;
-          width: 100%;
-      }
-      @media(max-width:550px){
+.staticNums{
+    @media(min-width:767px){
+        display: flex;
+        width: 100%;
+    }
+    @media(max-width:550px){
         height: 80%;
-      }
-      display: flex;
-      width: 95%;
-      height: 50%;
-    //   border: 1px solid green;
+    }
+    display: flex;
+    width: 95%;
+    height: 50%;
   }
-  .staticNums > ul {
-      @media(max-width:550px){
+.staticNums > ul {
+    @media(max-width:550px){
         flex-direction: column;
         display: flex;
         flex-wrap: wrap;
-      }
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: space-around;
+    }
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
   }
-  .staticNums > ul > li {
-      @media(max-width:550px){
-          width: 15%;
-          height: 10%;
-      }
-      display: flex;
-      justify-content: space-around;
-      margin: 2px;
-      list-style-type: none;
-      width: 20%;
-      height: 15%;
-      color: blue;
-      @include background-gardient();
-      font-size: 2em;
+.staticNums > ul > li {
+    @media(max-width:550px){
+        width: 15%;
+        height: 10%;
+    }
+    display: flex;
+    justify-content: space-around;
+    margin: 2px;
+    list-style-type: none;
+    width: 20%;
+    height: 15%;
+    color: blue;
+    @include background-gardient();
+    font-size: 2em;
   }
   
-  .draggableNums{
-      display: flex;
-      width: 80%;
-      height: 15%;
-    //   border: 1px solid red;
+.draggableNums{
+    display: flex;
+    width: 80%;
+    height: 15%;
   }
-   .draggableNums > ul {
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
+.draggableNums > ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
   }
 
-  #drag1, #drag2{
-        @media(max-width:550px){
-          height: 45%;
-          width: 15%;
-        }
-         display: flex;
-      justify-content: space-around;
-      border: 2px solid blue; 
-      width: 10%;
-      color: white;
-      @include background-gardient();
-      height: 50%;
-      padding:1px;
-      margin: 3px;
-      list-style-type: none;
-      font-size: 2em;
-      
+ #drag1, #drag2{
+    @media(max-width:550px){
+        height: 45%;
+        width: 15%; 
+      }
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid blue; 
+    width: 10%;
+    color: white;
+    @include background-gardient();
+    height: 50%;
+    padding:1px;
+    margin: 3px;
+    list-style-type: none;
+    font-size: 2em;
   }
 
 

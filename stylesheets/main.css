@@ -6283,14 +6283,49 @@ footer {
 .game1Ans .ans2.rightAns {
   border: 0.5rem solid blue; }
 
+.welcomePopUp {
+  background: #ffaf4b;
+  background: -moz-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #ffaf4b), color-stop(100%, #ff920a));
+  background: -webkit-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
+  background: -o-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
+  background: -ms-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
+  background: linear-gradient(to right, #ffaf4b 0%, #ff920a 100%);
+  height: 30%;
+  width: 50%;
+  border: 2px solid  blue;
+  border-radius: 10%;
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; }
+
+@media (max-width: 550px) {
+  .welcomePopUp {
+    height: 40%; } }
+
+.welcomePopUp > button {
+  height: 15%;
+  width: 35%; }
+
+.welcomePopUp > p {
+  color: white;
+  font-size: 2em; }
+
 .game2container {
-  background: url("../img/background.jpg");
+  background: url("../img/game2/background.jpg");
   background-size: cover;
   margin: 5px;
   display: flex;
   flex-wrap: wrap;
   height: 95vh;
-  width: 95vw; }
+  width: 95vw;
+  z-index: 0; }
 
 .statusGame2 {
   height: 18%;
@@ -6435,27 +6470,24 @@ footer {
   opacity: 0; }
 
 .game4container {
-  background: url("../img/background_game4.png");
+  background: url("../img/game4/background.png");
   background-size: cover;
   margin: 5px;
   display: flex;
   flex-direction: column;
   height: 95vh;
-  width: 95vw;
-  border: 1px solid blue; }
+  width: 95vw; }
 
 .sheepsContainer {
   display: flex;
   width: 95%;
   height: 80%;
-  border: 1px solid green;
-  z-index: 0;
   display: flex;
   align-items: flex-end; }
 
 .sheepsContainer > img {
-  height: 60px;
-  width: 60px;
+  height: 15%;
+  width: 15%;
   margin: 10px; }
 
 .sheepsContainer > img:nth-child(2) {
@@ -6487,6 +6519,40 @@ footer {
   padding: 15px 20px;
   border-radius: 50%;
   border: 3px solid blue; }
+
+.welcomePopUp {
+  background: #ffaf4b;
+  background: -moz-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, #ffaf4b), color-stop(100%, #ff920a));
+  background: -webkit-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
+  background: -o-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
+  background: -ms-linear-gradient(left, #ffaf4b 0%, #ff920a 100%);
+  background: linear-gradient(to right, #ffaf4b 0%, #ff920a 100%);
+  height: 30%;
+  width: 50%;
+  border: 2px solid  blue;
+  border-radius: 10%;
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; }
+
+@media (max-width: 550px) {
+  .welcomePopUp {
+    height: 40%; } }
+
+.welcomePopUp > button {
+  height: 15%;
+  width: 35%; }
+
+.welcomePopUp > p {
+  color: white;
+  font-size: 2em; }
 
 @media (max-width: 767px) {
   font-size: 11px;

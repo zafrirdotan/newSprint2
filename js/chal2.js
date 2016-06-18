@@ -146,8 +146,11 @@ function isWin(){
                 i++;
              });
     if (win){
-        alert('WIN');
-        goToNextLevel('chal3');
+         $('.welcomePopUp')
+            .css('zIndex',2)
+            .show();
+         $('.messege').text('good job ,you may go to the next level');
+         $('.btnPlay').attr("onclick","removePopup();goToNextLevel('chal3');");
     }
     else{
         console.log('not win yet');
@@ -161,5 +164,6 @@ function isWin(){
 //         });
 //     return levelCell[0].amount;
 // }
+
 
 init();

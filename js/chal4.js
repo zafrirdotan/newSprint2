@@ -14,9 +14,9 @@ function drawSheeps(){
     var strHTML ='';
     for (var i = 0;i < rand ; i++){
         if (i%2 === 0){
-            strHTML += '<img src="img/sheep-game4new.png" alt="">' 
+            strHTML += '<img src="img/game4/1.png" alt="">' 
         } else {
-            strHTML += '<img src="img/sheep-game4reverse.png" alt="">' 
+            strHTML += '<img src="img/game4/2.png" alt="">' 
             
         }
     }
@@ -37,12 +37,17 @@ function choiseClicked(){
     $('#choise1,#choise2,#choise3,#choise4,#choise5').click(function(){
         $('body').click(function( event ) {
             $('body').unbind();
-            var str = event.target.id;
-            str = '#' + str;
+            var str = '#' + event.target.id;
             var num = parseInt($(str).text().match(/\d+/)[0], 10); 
             if (num === numOfSheeps) {
-                alert('WIN');
-                goToNextLevel('chal3');
+                $('.welcomePopUp')
+                .css('zIndex',2)
+                .show();
+                
+                $('.messege').text('good job ,you finished all games');
+                $('.btnPlay')
+                .text('finish')
+                .attr("onclick","removePopup();goToNextLevel('chal5');");
             }
             else {
                 alert('try again');

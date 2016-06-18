@@ -57,8 +57,7 @@ function reportSolved(chalId){
  function goToNextLevel(id){
      console.log('id in gotonext level');
      if (id === 'chal5'){
-         var homePageStr = getHomePage();
-        window.location.href = homePageStr;
+        window.location.href = 'index.html';
      } else{
         finishChal(id);
         upDateLS()
@@ -88,6 +87,7 @@ function reportSolved(chalId){
      document.querySelector( '.' + id ).disabled = false; 
  }
 
-function getHomePage(){
-    return 'http://127.0.0.1:8080';
+function removePopup(){
+    $('.welcomePopUp').css('zIndex',-1);
+    $('.welcomePopUp').hide();
 }
