@@ -2,17 +2,15 @@ var numOfSheeps;
 var difficulty = [{level: 1,amount: 1},{level: 2,amount: 3},{level: 3,amount: 5},];
 
     $('input').on('change', function() {
-        var $diffic = $('input[name=difficulty]:checked').val() 
-        $diffic = parseInt($diffic);
-        var amount = getDiffByLevel($diffic) + 1;
+        var diffic = parseInt($('input[name=difficulty]:checked').val()); 
+        var amount = getDiffByLevel(diffic) + 1;
         // console.log('amount',amount);
         init(amount)
     });
 
 function init(amount){
-    var $diffic = $('input[name=difficulty]:checked').val() 
-    $diffic = parseInt($diffic);
-    amount = getDiffByLevel($diffic) + 1;
+    var diffic = parseInt($('input[name=difficulty]:checked').val()); 
+    amount = getDiffByLevel(diffic) + 1;
     drawSheeps(amount);
     drawChoises(numOfSheeps);
     choiseClicked();

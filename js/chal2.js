@@ -2,18 +2,15 @@ var numsToPlace;
 var difficulty = [{level: 1,amount: 10},{level: 2,amount: 20},{level: 3,amount: 30},];
 
     $('input').on('change', function() {
-        var $diffic = $('input[name=difficulty]:checked').val() 
-        $diffic = parseInt($diffic);
-        var amount = getDiffByLevel($diffic) + 1;
-        init(amount,$diffic)
+        var diffic = parseInt($('input[name=difficulty]:checked').val()); 
+        var amount = getDiffByLevel(diffic) + 1;
+        init(amount,diffic)
         
     });
     
 function init(amount,diffic){
-    diffic = $('input[name=difficulty]:checked').val() 
-    diffic = parseInt(diffic);
+    diffic = parseInt($('input[name=difficulty]:checked').val()); 
     amount = getDiffByLevel(diffic) + 1;
-    // console.log('amount',amount);
     numsToPlace = [];
     drawDraggables(diffic);
     drawStaticNums(amount);
@@ -21,7 +18,6 @@ function init(amount,diffic){
 }
 
 function drawDraggables(diffic){
-    // console.log('diffic',diffic);
     var elContainer = document.querySelector('.draggableNums');
     var strHTML ='<ul>';
     var i = 1;
