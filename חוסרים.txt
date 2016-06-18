@@ -1,0 +1,10 @@
+"v" and locked symbols on levels in main screen
+progress bar and score
+hebrew language 
+missing css animations and extras\
+contact page
+
+game1:
+game2:only 2 draggable items
+game3:
+game4:difficulity=>not like in the pdf,

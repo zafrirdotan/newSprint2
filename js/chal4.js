@@ -1,28 +1,24 @@
 var numOfSheeps;
-var difficulty = [{level: 1,amount: 5},{level: 2,amount: 7},{level: 3,amount: 12},];
+var difficulty = [{level: 1,amount: 1},{level: 2,amount: 3},{level: 3,amount: 5},];
 
     $('input').on('change', function() {
-        var $diffic = $('input[name=difficulty]:checked').val() 
-        $diffic = parseInt($diffic);
-        var amount = getDiffByLevel($diffic);
-        amount++;
-        console.log('amount',amount);
-        
-        init(amount,$diffic)
-        
+        var diffic = parseInt($('input[name=difficulty]:checked').val()); 
+        var amount = getDiffByLevel(diffic) + 1;
+        // console.log('amount',amount);
+        init(amount)
     });
 
 function init(amount){
+    var diffic = parseInt($('input[name=difficulty]:checked').val()); 
+    amount = getDiffByLevel(diffic) + 1;
     drawSheeps(amount);
     drawChoises(numOfSheeps);
     choiseClicked();
 }
 
 function drawSheeps(amount){
-    var rand = parseInt(Math.random()*amount) + 1;
+    var rand = parseInt(Math.random()*5) + amount;
     numOfSheeps = rand;
-    console.log('numOfSheeps',numOfSheeps);
-    
     var elContainer = document.querySelector('.sheepsContainer');
     var strHTML ='';
     for (var i = 0;i < rand ; i++){
@@ -30,7 +26,6 @@ function drawSheeps(amount){
             strHTML += '<img src="img/game4/1.png" alt="">' 
         } else {
             strHTML += '<img src="img/game4/2.png" alt="">' 
-            
         }
     }
     elContainer.innerHTML = strHTML;
@@ -47,12 +42,11 @@ function drawChoises(numOfSheeps){
 }
 
 function choiseClicked(){
-    // $('#choise1,#choise2,#choise3,#choise4,#choise5').click(function(){
         $('li').click(function( event ) {
             $('body').unbind();
             var str = '#' + event.target.id;
-            var num = parseInt($(str).text().match(/\d+/)[0], 10); 
-            if (num === numOfSheeps) {
+            var selectedChoise = parseInt($(str).text().match(/\d+/)[0], 10); 
+            if (selectedChoise === numOfSheeps) {
                 $('.welcomePopUp')
                 .css('zIndex',2)
                 .show();
@@ -66,7 +60,6 @@ function choiseClicked(){
                 alert('try again');
             }                     
         });
-    // });
     
 }
 
@@ -77,4 +70,4 @@ function getDiffByLevel(level) {
     return levelCell[0].amount;
 }
 
-init(5);
+init();

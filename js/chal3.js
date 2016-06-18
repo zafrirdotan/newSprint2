@@ -84,6 +84,7 @@ function creatQues(maxNum) {
                 $('.game3Img').css('background-image', 'url('+ gImgs[gIndexLevel].src +')');
                 // the game ends herrrrrrrrrrrrrre 
                 // if( gIndexLevel = 3 ) goToNextLevel(chal2);
+                // goToNextLevel('game4')
                 creatQues(gLevels[gIndexLevel].maxNum);
              }
             }     

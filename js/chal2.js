@@ -2,16 +2,15 @@ var numsToPlace;
 var difficulty = [{level: 1,amount: 10},{level: 2,amount: 20},{level: 3,amount: 30},];
 
     $('input').on('change', function() {
-        var $diffic = $('input[name=difficulty]:checked').val() 
-        $diffic = parseInt($diffic);
-        var amount = getDiffByLevel($diffic);
-        amount++;
-        init(amount,$diffic)
+        var diffic = parseInt($('input[name=difficulty]:checked').val()); 
+        var amount = getDiffByLevel(diffic) + 1;
+        init(amount,diffic)
         
     });
     
 function init(amount,diffic){
-    console.log('amount',amount);
+    diffic = parseInt($('input[name=difficulty]:checked').val()); 
+    amount = getDiffByLevel(diffic) + 1;
     numsToPlace = [];
     drawDraggables(diffic);
     drawStaticNums(amount);
@@ -19,8 +18,6 @@ function init(amount,diffic){
 }
 
 function drawDraggables(diffic){
-    console.log('diffic',diffic);
-    
     var elContainer = document.querySelector('.draggableNums');
     var strHTML ='<ul>';
     var i = 1;
@@ -64,9 +61,6 @@ function setDraggable(drags){
 }
 
 function setDroppable(dragsValues,dropsIds,dragsIds){
-    // console.log('dragsNums : ',dragsValues);
-    // console.log('dropsIds :',dropsIds);
-    // console.log('dragsIds : ',dragsIds);
     $(dropsIds[0]).droppable({
         drop: function (e, ui) {
             var draggedId = $('#' + ui.draggable.attr('id'));
@@ -86,7 +80,7 @@ function setDroppable(dragsValues,dropsIds,dragsIds){
         }
     });
 }
-
+//calls setDraggable and setDroppable with the right parameters, not ready!!!!
 function readyDragDrop(){
     var drag1 = $('#drag1').html();
     var drag2 = $('#drag2').html();
@@ -127,10 +121,10 @@ function isWin(){
     var win = true;
     var i = 1;
     $("li").each(function(){
-                var x = parseInt($(this).text())
-                if ( x !== i) win = false;
-                i++;
-             });
+        var x = parseInt($(this).text())
+        if ( x !== i) win = false;
+        i++;
+    });
     if (win){
          $('.welcomePopUp')
             .css('zIndex',2)
@@ -152,4 +146,4 @@ function getDiffByLevel(level) {
 }
 
 
-init(11,1);
+init();
