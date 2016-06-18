@@ -4,33 +4,52 @@ $(document).ready(function(){
 
 });
 
+var gImgs = [
+    { 
+        name: 'DoraStar',
+        Src: 'img/game1Imgs/1.gif'
+    }, 
+    { 
+        name: 'DoraStar',
+        Src: 'img/game1Imgs/2.jpg'
+    },
+    { 
+        name: 'DoraStar',
+        Src: 'img/game1Imgs/3.jpg'
+    },
+    { 
+        name: 'DoraStar',
+        Src: 'img/game1Imgs/4.jpg'
+    }  
+];
 var gGame1Quess = [
     {
         name: 'DoraStar',
-        imgSrc: 'img/game1Imgs/dora.gif',
+        imgSrc: gImgs[0].Src,
         trueAns: 'Dora is riching for the star',
         falseAns: 'Dora is riching for the moon',
     },
     {
         name: 'DoraStar',
-        imgSrc: 'img/game1Imgs/doraAndRabit.jpg',
+        imgSrc: gImgs[1].Src,
         trueAns: 'Dora is riching for the star',
         falseAns: 'Dora is riching for the moon'
     },
     {
         name: 'DoraStar',
-        imgSrc: 'img/game1Imgs/doraAtBeach.jpg',
+        imgSrc: gImgs[2].Src,
         trueAns: 'Dora is riching for the star',
         falseAns: 'Dora is riching for the moon'
     },
     {
         name: 'DoraStar',
-        imgSrc: 'img/game1Imgs/doraIsCrayng.jpg',
+        imgSrc: gImgs[3].Src,
         trueAns: 'Dora is riching for the star',
         falseAns: 'Dora is riching for the moon'
     }
 
 ];
+
 
 var gCurrQues = 0;
 
@@ -96,6 +115,7 @@ function button1Clicked(value, id) {
 
         if (gCurrQues === gGame1Quess.length){
              alert('end of the game');
+             goToNextLevel(chal2);
             //  var currName = JSON.parse(localStorage.getItem('currName'));
              var gChal = JSON.parse(localStorage.getItem('player'))
             //   localStorage.setItem('name', JSON.stringify(gCurrQues));
@@ -107,7 +127,7 @@ function button1Clicked(value, id) {
             renderQues(gGame1Quess, gCurrQues);
             $('.ans1').removeClass('rightAns');
             $('.ans2').removeClass('wrongAns');
-        }, 3000);
+        }, 1000);
 
    }else{
         console.log('pushedWrongAns');  
@@ -138,6 +158,7 @@ function button2Clicked(value, id) {
 
         if (gCurrQues === gGame1Quess.length) {
             alert('end of the game');
+            goToNextLevel(chal2);
             //  var currName = JSON.parse(localStorage.getItem('currName'));
              var gChal = JSON.parse(localStorage.getItem('player'));
              gChal[0].isSolved = true;
@@ -152,7 +173,7 @@ function button2Clicked(value, id) {
             renderQues(gGame1Quess, gCurrQues);
             $('.ans2').removeClass('rightAns');
             $('.ans1').removeClass('wrongAns');
-        }, 3000);
+        }, 1000);
 
    }else{
         console.log('pushedWrongAns');  
